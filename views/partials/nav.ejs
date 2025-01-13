@@ -1,0 +1,16 @@
+<nav
+class="bg-red-500 h-16 content-center text-lg text-white font-bold  cursor-pointer"
+>
+<ul class="flex gap-12 ml-8">
+  <li class="<%= currentPage==='home' ? 'bg-red-400' : 'hover:br-red-400' %> rounded py-2 px-4 "><a href="/">Home </a></li>
+  <li class="<%= currentPage==='add-home' ? 'bg-red-400' : 'hover:br-red-400' %> rounded py-2 px-4" >
+    <a href="/host/add-home">Add Home</a>
+  </li>
+  <li class="<%= currentPage==='bookings' ? 'bg-red-400' : 'hover:br-red-400' %> rounded py-2 px-4" >
+    <a href="/bookings">Bookings</a>
+  </li>
+  <li class="<%= currentPage==='favourites' ? 'bg-red-400' : 'hover:br-red-400' %> rounded py-2 px-4" >
+    <a href="/host/favourites">Favourites</a>
+  </li>
+</ul>
+</nav> 
