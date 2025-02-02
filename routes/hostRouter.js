@@ -13,7 +13,7 @@ const hostRouter = express.Router();
   //res.sendFile(path.join(rootDir, 'views', 'addHome.ejs'));
 //})
 
-const {getaddHome,postAddHome,getFavourites} = require('../controller/hostController');
+const {getaddHome,postAddHome,getFavourites,gethomelist} = require('../controller/hostController');
 
 hostRouter.get('/add-home',getaddHome);
 // here our problem is that at every sever end our array bcomes empty and to show those homes on html page we use ejs this array also needed here as this is not used here
@@ -34,6 +34,7 @@ hostRouter.get('/add-home',getaddHome);
 
 hostRouter.post('/add-home',postAddHome);
 hostRouter.get('/favourites',getFavourites);
+hostRouter.get('/host-home-list',gethomelist);
 //now we need to export resgisteredhomes bcz we have to use them else where 
 //exports.hostRouter = hostRouter;
 

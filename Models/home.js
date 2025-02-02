@@ -15,6 +15,7 @@ module.exports =class Home{
     }
     // this is saving data so needs to be done in model so doing here.
     save(){
+        this.id=Math.random().toString();
         Home.FetchAll((registeredHomes)=>{
         registeredHomes.push(this);
         console.log(registeredHomes);
@@ -26,6 +27,7 @@ module.exports =class Home{
         
         })
     }
+
     // static so that the fucniton will be associated to class instead of object
     static FetchAll(callback){
         const filePath=path.join(rootDir,'data','homes.json');
@@ -39,5 +41,11 @@ module.exports =class Home{
             }              
         });
         
+    }
+    static FindHome(homeId, callback){
+        this.FetchAll(homes=>{
+           const homeFound=homes.find(home=>home.id===homeId);
+           callback(homeFound);
+        })
     }
 }

@@ -36,10 +36,22 @@ const getFavourites =(req,res,next)=>{
   })
 };
 
+const gethomelist=(req,res,next)=>{
+  Home.FetchAll((registeredHomes)=>{
+    res.render("host/host-home-list",{
+      registeredHomes: registeredHomes,
+      pageTitle: "host-home-list",
+      currentPage: "host-home-list",
+
+    })
+  })
+};
+
 
 
 exports.postAddHome = postAddHome;
 exports.getaddHome = getaddHome;
 exports.getFavourites=getFavourites
+exports.gethomelist=gethomelist;
 //no need to export this as this is used in controller and here is full controller
 //exports.registeredHomes = registeredHomes;

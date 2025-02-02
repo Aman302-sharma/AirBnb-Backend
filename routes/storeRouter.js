@@ -4,7 +4,7 @@ const path = require('path');
 // External Module
 const express = require('express');
 const storeRouter = express.Router();
-const {getHomes,getBookings}=require('../controller/storeController');
+const {getHomes,getBookings,getHomeDetails}=require('../controller/storeController');
 
 // Local Module
 const rootDir = require("../utils/pathUtil");
@@ -18,5 +18,6 @@ const rootDir = require("../utils/pathUtil");
 
 storeRouter.get('/',getHomes);
 storeRouter.get('/bookings',getBookings);
+storeRouter.get('/homes/:homeId',getHomeDetails)
 
 module.exports = storeRouter;
